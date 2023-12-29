@@ -15,7 +15,7 @@ jobs:
     - name: Stop API
       uses: garygrossgarten/github-action-ssh@v0.6.3
       with:
-        command: pwd && cd /my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
+        command: cd /my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
@@ -24,7 +24,7 @@ jobs:
     - name: Copy to Server via SCP
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: /home/runner/work/my-hub/
+        local: ./
         concurrency: 10
         remote: /my-hub
         host: ${{ secrets.REMOTE_HOST }}
