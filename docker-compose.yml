@@ -1,0 +1,9 @@
+version: "1"
+services:
+  my-hub:
+    restart: always
+    build: .
+    environment:
+      - PORT=5006
+    ports:
+      - 5006:5006
