@@ -15,7 +15,7 @@ jobs:
     - name: Stop API
       uses: garygrossgarten/github-action-ssh@v0.6.3
       with:
-        command: cd /my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
+        command: pwd && cd /my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
