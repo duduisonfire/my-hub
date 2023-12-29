@@ -24,7 +24,7 @@ jobs:
     - name: Copy to Server via SCP
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: /home/runner/work/my-hub/my-hub/
+        local: /home/runner/work/my-hub/
         concurrency: 10
         remote: /my-hub
         host: ${{ secrets.REMOTE_HOST }}
