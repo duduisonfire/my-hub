@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npx tailwindcss -i ./tailwind.css -o ./src/styles.css && ng serve",
+    "build": "npx tailwindcss -i ./tailwind.css -o ./src/styles.css && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:my-hub": "node dist/my-hub/server/server.mjs",
