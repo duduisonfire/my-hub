@@ -20,6 +20,9 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
         privateKey: ${{ secrets.REMOTE_SSH_KEY }}
+
+    - name: checkout
+      uses: actions/checkout@v2
       
     - name: Copy to Server via SCP
       uses: garygrossgarten/github-action-scp@release
