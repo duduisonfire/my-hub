@@ -1,0 +1,135 @@
+<section>
+  <div class="flex m-12 py-8 bg-white rounded-lg flex-row justify-center">
+    <div class="flex flex-col jus">
+      <h1 class="px-6 pb-4 text-xl font-bold">
+        Hello, my name is Igor Tiburcio Cavalcanti, It's a pleasure to have you
+        here.
+      </h1>
+      <p class="px-6 text-lg">
+        Welcome to my personal website. This site was developed so that you who
+        are accessing it can get to know me a little more, so let's go. I am a
+        Systems Analysis and Development student and have been programming for a
+        year and a half. My favorite technologies are the following:
+      </p>
+      <img
+        class="m-6 self-center w-4/5"
+        src="https://skills.thijs.gg/icons?i=git,github,html,css,tailwind,js,ts,react,angular,docker,jest,cs,electron,dotnet,nodejs,mongodb,express,mysql,linux"
+        alt="" />
+      <p class="px-6 text-lg">
+        My goal is to become a full-stack developer, because I really like
+        knowing how an application works from end to end, I feel like this way
+        we have more control over the project. And finally, I'm 26 years old, I
+        love reading, playing video games and programming.
+      </p>
+      <h1 class="px-6 pt-6 text-xl font-bold">My Projects</h1>
+      <p class="px-6 text-lg">
+        If you've come this far, you've seen that I have some projects, let's
+        talk a little about each of them.
+      </p>
+      <div class="m-6 md:m-0 flex flex-col">
+        <h1 class="md:px-6 md:pt-6 text-lg font-bold">Rune Maker</h1>
+        <img
+          class="mx-6 mb-6 self-center md:self-start"
+          width="350"
+          src="https://skills.thijs.gg/icons?i=tailwind,ts,react,jest,electron,linux"
+          alt="" />
+
+        <div class="flex flex-wrap md:flex-nowrap md:justify-center">
+          <img
+            class="w-100 mb-4 md:m-6"
+            src="https://camo.githubusercontent.com/707d8cbdf3c63b1de178dd9b72d0d512db68183cb2b536b9d032b1deed84cf95/68747470733a2f2f692e706f7374696d672e63632f56766e634b4752732f53637265656e73686f742d66726f6d2d323032332d31302d32342d30342d35362d30382e706e67"
+            alt="" />
+          <img
+            class="w-100 md:m-6"
+            src="https://camo.githubusercontent.com/4cebede926f1cadac7987da3a1062460e2448f210b5c4df7d8057467ef0a57e2/68747470733a2f2f692e706f7374696d672e63632f4a6e79386b34486b2f34616434336439352d363738342d343034312d613265622d6137666666626433613332612e6a7067"
+            alt="" />
+        </div>
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          This project is definitely my favorite. Rune Maker is a open-source
+          desktop application, built with web technologies to be an assistant to
+          the game League of Legends. And what is its real use? Before starting
+          a match, players need to select the best combination of runes for
+          their character, this is a lot of work, let Rune Maker do it for you.
+        </p>
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          <span class="text-md font-bold">How does the program work?</span>
+          Let's start by talking about how the program communicates with the
+          League of Legends Client. Whenever the game is opened on your machine,
+          it automatically launches a Rest API on localhost, from this API you
+          can have full control of the game's Client. Now coming back to Rune
+          Maker, it is conceptually very simple, it was built using Electron,
+          React and TypeScript. Electron works with two layers, one that
+          accesses the operating system and another that renders the screen.
+          React is responsible for the screen rendering layer, it also does all
+          the hard work of accessing the LoL API and my own API to get the best
+          sets of runes for each champion (we'll talk about it later). Electron
+          is responsible for an operation, finding the game folder that the user
+          selected, checking if the game is open and collecting the information
+          necessary to authenticate with the Client API. With all that in hand,
+          the rest of the work is manipulating data and creating screens in
+          React, nothing too complex. Ah, yes, I almost forgot, this project was
+          created entirely for Linux (maybe in the future we will launch a
+          version for Windows).
+        </p>
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          If you want to see more about the project visit:
+          <a
+            href="https://github.com/duduisonfire/rune-maker"
+            class="text-blue-800 font-bold"
+            >Github</a
+          >
+        </p>
+      </div>
+      <div class="m-6 md:m-0 flex flex-col">
+        <h1 class="md:px-6 md:pt-6 text-lg font-bold">Rune Scraping API</h1>
+        <img
+          class="mx-6 mb-6 self-center md:self-start"
+          width="250"
+          src="https://skills.thijs.gg/icons?i=cs,dotnet,mongodb,selenium,linux"
+          alt="" />
+
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          This project is a complement to Rune Maker, as I said a little above,
+          in each game the player needs to select the most efficient set of
+          runes for their character. Naturally, Rune Maker doesn't know how to
+          choose the best runes, that's why it asks for this API.
+        </p>
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          <span class="text-md font-bold">How does the program work?</span>
+          The API works in a very simple way, it basically has a CronJob
+          configured so that, every 36 hours, the program does a Scraping on the
+          u.gg page (a website that collects and compiles statistics about the
+          game). It parses this information into a form that Rune Maker can
+          receive and interpret and saves all of this in a MongoDB database.
+          When Rune Maker needs to know about a character's rune, it sends an
+          HTTP request with the following model: url/api/ugg/diana/mid (in this
+          example, the chosen champion was Diana playing in mid lane), and then
+          the API returns everything Rune Maker needs.
+        </p>
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          If you want to see more about the project visit:
+          <a
+            href="https://runemaker.igorcoder.tech/swagger/index.html"
+            class="text-blue-800 font-bold"
+            >Swagger</a
+          >
+        </p>
+      </div>
+      <div class="m-6 md:m-0 flex flex-col">
+        <h1 class="md:px-6 md:pt-6 text-lg font-bold">My Hub</h1>
+        <img
+          class="mx-6 mb-6 self-center md:self-start"
+          width="150"
+          src="https://skills.thijs.gg/icons?i=angular,ts,tailwind"
+          alt="" />
+
+        <p class="mt-2 md:px-6 text-lg md:mt-4">
+          Finally we have this website, it's nothing big, in fact, it's just a
+          static website made in Angular and styled with Tailwind CSS, its only
+          purpose is to aggregate my projects and present myself to you who are
+          reading.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

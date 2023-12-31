@@ -1,0 +1,31 @@
+<section>
+  <div
+    class="flex m-12 py-8 bg-white rounded-lg flex-col justify-center md:flex-wrap">
+    <div class="flex justify-center">
+      <h1 class="px-6 text-xl">
+        Hello, welcome to my personal portfolio. What do you think about taking
+        a look at my projects?
+      </h1>
+    </div>
+
+    <div class="flex flex-wrap justify-between">
+      <app-cards
+        [isExternal]="true"
+        title="Rune Maker"
+        link="https://github.com/duduisonfire/rune-maker"
+        img="assets/rune-maker.png"
+        description="Rune Maker is an League of Legends assistant to select your runes (and in the future, your builds) automatically. I developed this app to personal use, why in linux this app like are inexistent. So, if you use linux you are welcome to use my app."></app-cards>
+      <app-cards
+        [isExternal]="true"
+        title="Rune Scraping API"
+        link="https://runemaker.igorcoder.tech/swagger/index.html"
+        img="assets/rune-scraping-api.png"
+        description="Rune Scraping API is an application made primarily to support Rune Maker. The operations performed by Rune Maker depend on the information provided by this API. It is currently open for anyone to use."></app-cards>
+      <app-cards
+        title="Igor Coder HUB"
+        link="/about"
+        img="assets/my-hub.png"
+        description="Igor Coder HUB is my personal website made with Angular. I created it to have a place that would centralize all my projects and make them presentable for you who are reading."></app-cards>
+    </div>
+  </div>
+</section>
