@@ -18,7 +18,7 @@ export class NavbarComponent {
     private renderer: Renderer2
   ) {
     this.renderer.listen('window', 'click', (e: MouseEvent) => {
-      if (!element.nativeElement.contains(e.target as Element)) {
+      if (!this.element.nativeElement.contains(e.target as Element)) {
         this.isHidden = true;
       }
     });
