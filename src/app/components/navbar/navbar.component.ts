@@ -24,17 +24,7 @@ export class NavbarComponent {
     });
   }
 
-  // private openMenu() {
-  //   const elementClasses = document.getElementById('navbar-default')?.classList;
-  //   if (this.isOpen) {
-  //     elementClasses?.remove('hidden');
-  //   } else {
-  //     elementClasses?.add('hidden');
-  //   }
-  // }
-
   buttonClick() {
     this.isHidden = !this.isHidden;
-    // this.openMenu();
   }
 }
