@@ -8,7 +8,7 @@
       >
     </a>
     <button
-      #toggleButton
+      #button
       (click)="buttonClick()"
       data-collapse-toggle="navbar-default"
       type="button"
@@ -17,14 +17,12 @@
       aria-expanded="false">
       <span class="sr-only">Open main menu</span>
       <svg
-        #button2
         class="w-5 h-5"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 17 14">
         <path
-          #button3
           stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -32,7 +30,11 @@
           d="M1 1h15M1 7h15M1 13h15" />
       </svg>
     </button>
-    <div #navbar class="hidden w-full md:block md:w-auto" id="navbar-default">
+    <div
+      #menu
+      [class.hidden]="isHidden"
+      class="hidden w-full md:block md:w-auto"
+      id="navbar-default">
       <ul
         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-gray-700">
         <li>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,19 +8,33 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  private isOpen = false;
+  @ViewChild('button') button: ElementRef<HTMLButtonElement>;
+  @ViewChild('menu') menu: ElementRef<HTMLDivElement>;
 
-  private openMenu() {
-    const elementClasses = document.getElementById('navbar-default')?.classList;
-    if (this.isOpen) {
-      elementClasses?.remove('hidden');
-    } else {
-      elementClasses?.add('hidden');
-    }
+  isHidden = true;
+
+  constructor(
+    private element: ElementRef<HTMLDivElement>,
+    private renderer: Renderer2
+  ) {
+    this.renderer.listen('window', 'click', (e: MouseEvent) => {
+      if (!element.nativeElement.contains(e.target as Element)) {
+        this.isHidden = true;
+      }
+    });
   }
 
+  // private openMenu() {
+  //   const elementClasses = document.getElementById('navbar-default')?.classList;
+  //   if (this.isOpen) {
+  //     elementClasses?.remove('hidden');
+  //   } else {
+  //     elementClasses?.add('hidden');
+  //   }
+  // }
+
   buttonClick() {
-    this.isOpen = !this.isOpen;
-    this.openMenu();
+    this.isHidden = !this.isHidden;
+    // this.openMenu();
   }
 }
