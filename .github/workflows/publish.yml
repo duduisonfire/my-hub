@@ -9,15 +9,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: checkout
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.x'
-    - run: npm i
-    - run: npm run build
-        
+    steps:      
     - name: Stop API
       uses: garygrossgarten/github-action-ssh@v0.6.3
       with:
@@ -26,7 +18,10 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
         privateKey: ${{ secrets.REMOTE_SSH_KEY }}
-    
+
+    - name: checkout
+      uses: actions/checkout@v2
+      
     - name: Copy to Server via SCP
       uses: garygrossgarten/github-action-scp@release
       with:
