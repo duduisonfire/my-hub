@@ -1,7 +1,5 @@
 FROM node:latest
 WORKDIR /my-hub
 COPY . .
-RUN npm install
-RUN npm run build
 EXPOSE 5006
-CMD ["npm", "run","serve:ssr:my-hub"]
+CMD ["node dist/my-hub/server/server.mjs"]
