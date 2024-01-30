@@ -13,7 +13,7 @@ jobs:
     - name: Stop API
       uses: garygrossgarten/github-action-ssh@v0.6.3
       with:
-        command: cd /my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
+        command: cd my-hub && touch dockerfile && touch docker-compose.yml && docker compose down
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
@@ -27,7 +27,7 @@ jobs:
       with:
         local: /home/runner/work/my-hub/my-hub
         concurrency: 10
-        remote: /my-hub
+        remote: my-hub
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
@@ -36,7 +36,7 @@ jobs:
     - name: Start API
       uses: garygrossgarten/github-action-ssh@v0.6.3
       with:
-        command: cd /my-hub && docker compose build && docker compose create && docker compose start
+        command: cd my-hub && docker compose build && docker compose create && docker compose start
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
